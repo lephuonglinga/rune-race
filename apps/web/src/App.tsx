@@ -1,6 +1,8 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
+import DemoPage from './pages/DemoPage'
 
-function App() {
+function HomePage() {
   const [count, setCount] = useState(0)
 
   return (
@@ -15,8 +17,22 @@ function App() {
           Count is: {count}
         </button>
         <p className="text-gray-600 text-sm mt-8">App is running ✨</p>
+        <a href="/demo" className="block mt-6 text-blue-600 hover:text-blue-800 font-semibold">
+          → Go to 3D Demo
+        </a>
       </div>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/demo" element={<DemoPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
