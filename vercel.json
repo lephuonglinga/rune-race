@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd ../.. && pnpm build --filter=@rune-race/web",
+  "outputDirectory": "apps/web/dist",
+  "env": {
+    "VITE_API_URL": "@rune-race/api-url"
+  }
+}

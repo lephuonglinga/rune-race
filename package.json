@@ -1,0 +1,23 @@
+{
+  "name": "rune-race",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "setup": "pnpm install",
+    "dev:web": "pnpm --filter @rune-race/web dev",
+    "dev:server": "pnpm --filter @rune-race/server dev",
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "build:web": "pnpm --filter @rune-race/web build",
+    "build:server": "pnpm --filter @rune-race/server build",
+    "build:shared": "pnpm --filter @rune-race/shared build",
+    "type-check": "pnpm --filter @rune-race/web type-check"
+  }
+}
