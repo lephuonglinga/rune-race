@@ -4,6 +4,13 @@
   "private": true,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types/game": "./src/types/game.ts",
+    "./protocol/events": "./src/protocol/events.ts",
+    "./schemas/events": "./src/schemas/events.ts",
+    "./schemas/game": "./src/schemas/game.ts"
+  },
   "scripts": {
     "build": "tsc"
   },
