@@ -1,24 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
-import DemoPage from './pages/DemoPage'
+import GamePage from './pages/GamePage'
 
 function HomePage() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
-      <div className="bg-white rounded-lg shadow-xl p-8 max-w-md text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-4">Rune Race</h1>
-        <p className="text-gray-600 mb-8">Welcome to the game</p>
-        <button
-          onClick={() => setCount(count + 1)}
-          className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+    <div className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+      <div className="w-full max-w-md rounded-2xl border border-slate-200 bg-white p-8 shadow-sm text-center">
+        <h1 className="text-3xl font-bold text-slate-900">Rune Race</h1>
+        <p className="mt-2 text-sm text-slate-600">Board viewport milestone</p>
+        <a
+          href="/game"
+          className="mt-6 inline-flex items-center justify-center rounded-lg bg-slate-900 px-5 py-2.5 font-semibold text-white transition hover:bg-slate-800"
         >
-          Count is: {count}
-        </button>
-        <p className="text-gray-600 text-sm mt-8">App is running ✨</p>
-        <a href="/demo" className="block mt-6 text-blue-600 hover:text-blue-800 font-semibold">
-          → Go to 3D Demo
+          Open Game Viewport
         </a>
       </div>
     </div>
@@ -30,7 +23,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/demo" element={<DemoPage />} />
+        <Route path="/game" element={<GamePage />} />
       </Routes>
     </BrowserRouter>
   )
